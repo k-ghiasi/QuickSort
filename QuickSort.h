@@ -8,15 +8,15 @@ public:
 	{
 		int q1, q2;
 		int stack[200]; 		// For sorting upto 10^30 numbers
-		int sp = 2;				//stack pointer is initalized to 2 to remove an extra if, allowing the stack size to be effectively -2.
+		int sp = 2;			//stack pointer is initalized to 2 to remove an extra if, allowing the stack size to be effectively -2.
 
 		do {
 			if (r > p) {
 				partition(A, p, r, q1, q2);
-				int p1 = p;				int r1 = q1 - 1;
+				int p1 = p;			int r1 = q1 - 1;
 				int p2 = q2 + 1;		int r2 = r;
 				if (r1 - p1 > r2 - p2) {
-					p2 = p1;			r2 = r1;
+					p2 = p1;		r2 = r1;
 					p1 = q2 + 1;		r1 = r;
 				}
 
